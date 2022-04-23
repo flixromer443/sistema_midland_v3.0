@@ -12,6 +12,7 @@
     $pid=$_GET['pid'];
     $codes=$_GET['codes'];
     $prices=$_GET['prices'];
+    $dates=$_GET['dates'];
 
     $codes_separated=explode(',',$codes);
     $number_of_codes=count($codes_separated);
@@ -19,7 +20,9 @@
     $prices_separated=explode(',',$prices);
     $number_of_prices=count($prices_separated);
 
-    
+    $dates_separated=explode(',',$dates);
+    $number_of_dates=count($dates_separated);
+
 
     
  // Arial bold 15
@@ -85,14 +88,14 @@ $pdf->SetX(25);
     $number_of_codes--;
     $code= $codes_separated[$number_of_codes]."<br>";
     $price= $prices_separated[$number_of_codes];
-
+    $date= $dates_separated[$number_of_codes];
 
 
     $query2="select * from activities where id='$code'";
     $res2=mysqli_query($link,$query2); 
     while($row2=mysqli_fetch_array($res2)){
         $total+=intval($price);
-        $vencimiento=explode("/",$fecha);
+        $vencimiento=explode("/",$date);
 
         if(intval($vencimiento[1]+1)==13){
             $vencimiento[1]=0;
@@ -101,7 +104,7 @@ $pdf->SetX(25);
         $pdf->SetX(30); 
         $pdf->Cell(40,10,$row2[1]);
         $pdf->SetX(65); 
-        $pdf->Cell(40,10,$fecha);
+        $pdf->Cell(40,10,$date);
         $pdf->SetX(90); 
         $pdf->Cell(40,10,'$'.$price);
         $pdf->SetX(105);
@@ -190,6 +193,7 @@ $codes=$_GET['codes'];
     $number_of_codes--;
     $code= $codes_separated[$number_of_codes]."<br>";
     $price= $prices_separated[$number_of_codes];
+    $date= $dates_separated[$number_of_codes];
 
 
 
@@ -197,7 +201,7 @@ $codes=$_GET['codes'];
     $res2=mysqli_query($link,$query2); 
     while($row2=mysqli_fetch_array($res2)){
         $total+=intval($price);
-        $vencimiento=explode("/",$fecha);
+        $vencimiento=explode("/",$date);
 
         if(intval($vencimiento[1]+1)==13){
             $vencimiento[1]=0;
@@ -206,7 +210,7 @@ $codes=$_GET['codes'];
         $pdf->SetX(30); 
         $pdf->Cell(40,10,$row2[1]);
         $pdf->SetX(65); 
-        $pdf->Cell(40,10,$fecha);
+        $pdf->Cell(40,10,$date);
         $pdf->SetX(90); 
         $pdf->Cell(40,10,'$'.$price);
         $pdf->SetX(105);

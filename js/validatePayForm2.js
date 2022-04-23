@@ -19,7 +19,7 @@ function addToPayment(code,element){
             alert("ingrese una fecha valida")
             element.checked=false
             
-        }else{
+        }else if(res===0){
             codes2.push(code)
             prices2.push(price)
             dates2.push(date)
