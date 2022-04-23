@@ -207,7 +207,7 @@ Filtrar por
             <i class="fa fa-download"></i> Generar factura de AFIP
             </button>
             </a>
-            <button type="button" class="btn btn-warning" data-bs-toggle="modal" href="#exampleModalToggle4" >
+            <button type="button" class="btn btn-warning" data-bs-toggle="modal" href="#exampleModalToggle5" >
             <i class="fa fa-download"></i> Generar factura instantanea
             </button>
             
@@ -254,24 +254,7 @@ Filtrar por
 
 <!--factura instantanea-->
 <!--modal grande  modal-lg-->
-<div class="modal fade" id="exampleModalToggle4" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-warning" style="color: aliceblue;" >
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel" ><i class="fa fa-dollar-sign"></i> Cobros</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-modal"></button>
-      </div>
-      <div class="modal-body">
-        Si desea generar una factura instantanea presione <strong>Continuar.</strong>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle5">Continuar</button>
-      </div>
-    </div>
-   
-  </div>
- 
-</div>
+
 <div class="modal fade " id="exampleModalToggle5" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content " style="color: aliceblue;" >

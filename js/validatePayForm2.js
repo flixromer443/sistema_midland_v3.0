@@ -46,10 +46,10 @@ function pay(action){
     let number=$('#number').val()
     switch(action){
         case 1:
-            window.open(`../components/factura_instantanea.php?pid=${number}&&partner=${partner}&&codes=${codes2}&&prices=${prices2} `)
+            window.open(`../components/factura_instantanea.php?pid=${number}&&partner=${partner}&&codes=${codes2}&&prices=${prices2}&&dates=${dates2} `)
         break;
         default:
-            window.open(`../components/factura_instantanea_afip.php?pid=${number}&&partner=${partner}&&codes=${codes2}&&prices=${prices2} `)
+            window.open(`../components/factura_instantanea_afip.php?pid=${number}&&partner=${partner}&&codes=${codes2}&&prices=${prices2}&&dates=${dates2} `)
         break;
             
     }
