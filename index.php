@@ -159,6 +159,7 @@
               <tr>
                 <th scope="col">Actividad</th>
                 <th scope="col">Precio</th>
+                <th scope="col">Fecha de emisi&oacute;n</th>
                 <th scope="col">Agregar</th>
               </tr>
             </thead>';
@@ -170,6 +171,11 @@
                   <div class="input-group mb-3">
                   <button class="btn btn-warning disabled" type="button" >$</button>
                   <input type="text" class="form-control" placeholder="0" id="price-'.$row[0].'" >
+                  </div>
+                </td>
+                <td>
+                  <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="dd/mm/aaaa" maxlength="10" oninput="autoCompleteDate(this)"id="date-'.$row[0].'" >
                   </div>
                 </td>
                 <td>
