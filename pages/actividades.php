@@ -117,12 +117,50 @@
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2-'.$row[0].'">
             <i class="fa fa-pen"></i>
             </button>
-            </td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--ver socios-->
+
+
+            <a href="../components/reporte_actividades.php?aid='.$row[0].'" target="_blank">
+            <button type="button" style="color:aliceblue"  class="btn btn-info">
+            <i class="fa fa-eye"></i>
+            </button>
+            </a>
             
             
+            </td>';
+            
+            
+            
+           
+
+            //<!--ver socios-->
           
-            <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop-'.$row[0].'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+
+
+
+
+
+
+
+
+
+            //<!-- Modal -->
+            echo'<div class="modal fade" id="staticBackdrop-'.$row[0].'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content  bg-danger">
                   <div class="modal-header">
@@ -152,7 +190,7 @@
               <div class="modal-content " >
               <form  action="../abm/abm_activities.php" method="POST"> 
                 <div class="modal-header bg-primary"">
-                  <h5 class="modal-title" id="staticBackdropLabel" style="color: aliceblue;">Actulizar actividad</h5>
+                  <h5 class="modal-title" id="staticBackdropLabel" style="color: aliceblue;">Actualizar actividad</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" >
@@ -162,13 +200,13 @@
                   <label for="">Actividad</label>
                   <br>
                   <div class="form-group">
-                  <input type="text" name="activitie" required id="activitie" value='.$row[1].' placeholder="Nombre">
+                  <input type="text" name="activitie" required id="activitie" value="'.$row[1].'" placeholder="Nombre">
                   </div>
                   <br><br>
                   <label for="">Precio</label>
                   <br>
                   <div class="form-group">
-                  <input type="text" name="price" id="price" required value='.$row[2].' placeholder="precio">
+                  <input type="text" name="price" id="price" required value="'.$row[2].'" placeholder="precio">
                   </div>
                   </div>
                 <div class="modal-footer">
