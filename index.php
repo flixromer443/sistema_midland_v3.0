@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -119,22 +119,24 @@
 <!--modal grande  modal-lg-->
 <div class="modal fade" id="exampleModalToggle4" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-warning" style="color: aliceblue;" >
-      <div class="modal-header">
+    <div class="modal-content " >
+      <div class="modal-header bg-warning"  style="color: aliceblue;">
         <h5 class="modal-title" id="exampleModalToggleLabel" ><i class="fa fa-dollar-sign"></i> Cobros</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-modal"></button>
       </div>
       <div class="modal-body">
-        Si desea generar una factura instantanea presione <strong>Continuar.</strong>
+        Si desea continuar seleccione una <strong>opci&oacute;n</strong>.
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle5">Continuar</button>
+        <button class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle6">Liquid&aacute;r sueldo </button>
+        <button class="btn btn-secondary" data-bs-toggle="modal" href="#exampleModalToggle5">Generar factura instantanea</button>
       </div>
     </div>
    
   </div>
  
 </div>
+<!--Factura instantanea-->
 <div class="modal fade " id="exampleModalToggle5" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content " style="color: aliceblue;" >
@@ -159,6 +161,7 @@
               <tr>
                 <th scope="col">Actividad</th>
                 <th scope="col">Precio</th>
+                <th scope="col">Fecha de emisi&oacute;n</th>
                 <th scope="col">Agregar</th>
               </tr>
             </thead>';
@@ -170,6 +173,11 @@
                   <div class="input-group mb-3">
                   <button class="btn btn-warning disabled" type="button" >$</button>
                   <input type="text" class="form-control" placeholder="0" id="price-'.$row[0].'" >
+                  </div>
+                </td>
+                <td>
+                  <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="dd/mm/aaaa" maxlength="10" oninput="autoCompleteDate(this)"id="date-'.$row[0].'" >
                   </div>
                 </td>
                 <td>
@@ -226,8 +234,76 @@
   </div>
  
 </div>
+<!--factura instantanea-->
 
 
+
+<!--liquidacion de sueldos-->
+<div class="modal fade " id="exampleModalToggle6" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content " style="color: aliceblue;" >
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title" id="exampleModalToggleLabel" >Liquidaci&oacute;n de sueldos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-modal"></button>
+      </div>
+      <div class="modal-body">
+       <label for="partner" style="color: black;">Nombre y apellido</label>
+       <input type="text" class="form-control input" id="settlementReceiver"placeholder="Nombre y apellido">
+       
+       <label for="partner" style="color: black;">N° de documento</label>
+       <input type="text" class="form-control input" id="settlementDocument" placeholder="N° de documento">
+       
+       <label for="partner" style="color: black;">Actividad</label>
+       <input type="text" class="form-control input" id="settlementActivitie"placeholder="Actividad">
+       
+       <br><br>
+       
+       <label for="partner" style="color: black;">Porcentaje de interes</label>
+       <div class="input-group mb-3">
+        <button class="btn btn-warning disabled" type="button" >%</button>
+        <input type="number" class="form-control input" id="settlementPercentage"placeholder="0">
+       </div>
+       
+       <label for="partner" style="color: black;">Total</label>
+       <div class="input-group mb-3">
+        <button class="btn btn-warning disabled" type="button" >$</button>
+        <input type="number" class="form-control input" id="settlementAmount"placeholder="0">
+       </div>
+        <br>
+      
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-warning" onclick="sendSalarySettlement()"><i class="fa fa-print"></i> Liquidar sueldo</button>
+      </div>
+    </div>
+   
+  </div>
+ 
+</div>
+<!--liquidacion de sueldos-->
 
 
 
@@ -275,5 +351,6 @@
 
 <script src="./js/sendBackupRequest.js"></script>
 <script src="./js/validatePayForm.js"></script>
+<script src="./js/validateSalarySettlement.js"></script>
 </body>
 </html>

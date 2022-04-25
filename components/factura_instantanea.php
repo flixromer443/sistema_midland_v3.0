@@ -12,13 +12,15 @@
     $pid=$_GET['pid'];
     $codes=$_GET['codes'];
     $prices=$_GET['prices'];
-
+    $dates=$_GET['dates'];
     $codes_separated=explode(',',$codes);
     $number_of_codes=count($codes_separated);
     
     $prices_separated=explode(',',$prices);
     $number_of_prices=count($prices_separated);
 
+    $dates_separated=explode(',',$dates);
+    $number_of_dates=count($dates_separated);
 
     
 
@@ -98,6 +100,7 @@ $pdf->Image('../img/midland.png' , 10 ,10, 15 , 15,'PNG');
     $number_of_codes--;
     $code= $codes_separated[$number_of_codes]."<br>";
     $price= $prices_separated[$number_of_codes];
+    $date= $dates_separated[$number_of_codes];
 
 
 
@@ -107,7 +110,7 @@ $pdf->Image('../img/midland.png' , 10 ,10, 15 , 15,'PNG');
         while($row2=mysqli_fetch_array($res2)){
             $icon+=5;
             $total+=intval($price);
-            $vencimiento=explode("/",$row[0]);
+            $vencimiento=explode("/",$date);
     
             if(intval($vencimiento[1]+1)==13){
                 $vencimiento[1]=0;
@@ -116,7 +119,7 @@ $pdf->Image('../img/midland.png' , 10 ,10, 15 , 15,'PNG');
     
             $pdf->Cell(40,10,$row2[1]);
             $pdf->SetX(65); 
-            $pdf->Cell(40,10,$fecha);
+            $pdf->Cell(40,10,$date);
             $pdf->SetX(90); 
             $pdf->Cell(40,10,'$'.$price);
             $pdf->SetX(105);
@@ -205,6 +208,7 @@ $pdf->Image('../img/midland.png' , 10 ,$icon, 15 , 15,'PNG');
     $number_of_codes--;
     $code= $codes_separated[$number_of_codes]."<br>";
     $price= $prices_separated[$number_of_codes];
+    $date= $dates_separated[$number_of_codes];
 
 
 
@@ -212,7 +216,7 @@ $pdf->Image('../img/midland.png' , 10 ,$icon, 15 , 15,'PNG');
     $res2=mysqli_query($link,$query2); 
     while($row2=mysqli_fetch_array($res2)){
         $total+=intval($price);
-        $vencimiento=explode("/",$row[0]);
+        $vencimiento=explode("/",$date);
 
         if(intval($vencimiento[1]+1)==13){
             $vencimiento[1]=0;
@@ -221,7 +225,7 @@ $pdf->Image('../img/midland.png' , 10 ,$icon, 15 , 15,'PNG');
 
         $pdf->Cell(40,10,$row2[1]);
         $pdf->SetX(65); 
-        $pdf->Cell(40,10,$fecha);
+        $pdf->Cell(40,10,$date);
         $pdf->SetX(90); 
         $pdf->Cell(40,10,'$'.$price);
         $pdf->SetX(105);
