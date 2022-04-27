@@ -97,7 +97,6 @@ $query="select f.headline, f.associated, p.partner from families as f inner join
         $res2=mysqli_query($link,$query2);
         if(mysqli_num_rows($res2)>0){
             while($row2=mysqli_fetch_array($res2)){
-                $icon+=5;
 
                 $total+=$row2[3];
                 $pdf->SetX(30);
