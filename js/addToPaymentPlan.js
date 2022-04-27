@@ -1,7 +1,6 @@
 let i=0
 let codes=[]
 function addToPaymentPlan(code,element){
-    alert("hello")
     if(element.checked){
         document.getElementById('paymentButton').style.display='block' 
         document.getElementById("code-"+code).classList.remove('bg-light');

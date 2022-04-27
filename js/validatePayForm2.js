@@ -41,7 +41,7 @@ function addToPayment(code,element){
     }
    
 }
-function pay(action){
+function pay (action){
     let partner=$('#partner').val()
     let number=$('#number').val()
     switch(action){
