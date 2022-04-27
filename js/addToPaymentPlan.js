@@ -1,23 +1,22 @@
 let i=0
 let codes=[]
-
-function addToPayment(code,element){
-
+function addToPaymentPlan(code,element){
+    alert("hello")
     if(element.checked){
         document.getElementById('paymentButton').style.display='block' 
-        document.getElementById(code).classList.remove('bg-light');
-        document.getElementById(code).classList.add('table-warning');
-        document.getElementById(code).classList.add('border');
-        document.getElementById(code).classList.add('border-primary');
-        document.getElementById(code).style.opacity=0.7
+        document.getElementById("code-"+code).classList.remove('bg-light');
+        document.getElementById("code-"+code).classList.add('table-warning');
+        document.getElementById("code-"+code).classList.add('border');
+        document.getElementById("code-"+code).classList.add('border-primary');
+        document.getElementById("code-"+code).style.opacity=0.7
         codes.push(code)
         i++;
     }else{
-        document.getElementById(code).classList.remove('border-primary');
-        document.getElementById(code).classList.remove('border');
-        document.getElementById(code).classList.remove('table-warning');
-        document.getElementById(code).classList.add('bg-light');
-        document.getElementById(code).style.opacity=1
+        document.getElementById("code-"+code).classList.remove('border-primary');
+        document.getElementById("code-"+code).classList.remove('border');
+        document.getElementById("code-"+code).classList.remove('table-warning');
+        document.getElementById("code-"+code).classList.add('bg-light');
+        document.getElementById("code-"+code).style.opacity=1
         index=codes.indexOf(code)
         codes.splice(index,1)
         i--;
@@ -27,7 +26,7 @@ function addToPayment(code,element){
         document.getElementById('paymentButton').style.display='none' 
     }   
 }
-function pay(){
+function payPlan(){
     const valores = window.location.search;
 
     const urlParams = new URLSearchParams(valores);

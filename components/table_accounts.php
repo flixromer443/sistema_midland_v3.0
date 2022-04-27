@@ -35,7 +35,7 @@
                       $fecha[1]=0;
                       $fecha[2]+=1;
                     }
-                    echo '<tr id='.$row[0].' class="bg-light">
+                    echo '<tr id="code-'.$row[0].'" class="bg-light">
                         <th scope="row">'.$pid.'</th>
                         <td>'.$row[2].'</td>
                         <td>'.$row[3].'</td>
@@ -45,7 +45,7 @@
                         <i class="fa fa-dollar-sign"></i>
                         </button>
                         <div class="form-check" >
-                            <input class="form-check-input" style="width:20px;height:20px" type="checkbox" value="1" id="defaultCheck1" onclick="addToPayment('.$row[0].',this)">
+                            <input class="form-check-input" style="width:20px;height:20px" type="checkbox" value="1" id="defaultCheck1" onclick="addToPaymentPlan('.$row[0].',this)">
                             <label class="form-check-label" for="defaultCheck1">
                                 Agregar a plan de pago
                             </label>
@@ -155,7 +155,7 @@
                       $fecha[1]=0;
                       $fecha[2]+=1;
                     }
-                    echo '<tr id='.$row[0].' class="bg-light">
+                    echo '<tr id="code-'.$row[0].'" class="bg-light">
                         <th scope="row">'.$pid.'</th>
                         <td>'.$row[2].'</td>
                         <td>'.$row[3].'</td>
@@ -165,7 +165,7 @@
                         <i class="fa fa-dollar-sign"></i>
                         </button>
                         <div class="form-check" >
-                            <input class="form-check-input" style="width:20px;height:20px" type="checkbox" value="1" id="defaultCheck1" onclick="addToPayment('.$row[0].',this)">
+                            <input class="form-check-input" style="width:20px;height:20px" type="checkbox" value="1" id="defaultCheck1" onclick="addToPaymentPlan('.$row[0].',this)">
                             <label class="form-check-label" for="defaultCheck1">
                                 Agregar a plan de pago
                             </label>
@@ -232,7 +232,7 @@
                                 <i class="fa fa-dollar-sign"></i>
                                 </button>
                                 <div class="form-check" >
-                                    <input class="form-check-input" style="width:20px;height:20px" type="checkbox" value="1" id="defaultCheck1" onclick="addToPayment('.$row2[0].',this)">
+                                    <input class="form-check-input" style="width:20px;height:20px" type="checkbox" value="1" id="defaultCheck1" onclick="addToPaymentPlan('.$row2[0].',this)">
                                     <label class="form-check-label" for="defaultCheck1">
                                         Agregar a plan de pago
                                     </label>

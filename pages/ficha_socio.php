@@ -5,6 +5,7 @@
     $res=mysqli_query($link,$query);
     $row=mysqli_fetch_array($res);
     $socio=$row[1];
+    $titular=$row[2];
     $query="select * from partners_activities  where pid='$id'";
 ?>
 <!DOCTYPE html>
@@ -53,7 +54,7 @@
         </li>
         <li class="nav-item" id="paymentButton" style="display: none;">
           
-            <button type="button" class="btn btn-primary" onclick="pay();" >
+            <button type="button" class="btn btn-primary" onclick="payPlan();" >
               plan de pago
             </button>
           
@@ -370,8 +371,8 @@ Filtrar por
    <?php
     include("../components/family_table.php");
 
-
-    table($id,$link,$row[2]);
+        
+    table($id,$link,$titular);
     
    ?>
 </div>
@@ -393,7 +394,7 @@ Filtrar por
 <div class="container">
     <?php
       include("../components/table_accounts.php");
-      account_table($link,$id,$row[2]);
+      account_table($link,$id,$titular);
 
     ?>
 </div>
@@ -419,8 +420,8 @@ Filtrar por
 
 <script src="../plugins/jquery/jquery.min.js"></script>
 <script src="../js/findPartnerFilter2.js"></script>
-<script src="../js/addToPaymentPlan.js"></script>
 <script src="../js/validatePayForm2.js"></script>
+<script src="../js/addToPaymentPlan.js"></script>
 <br><br><br>
 <footer class="text-center text-lg-start bg-primary text-muted ">
   
